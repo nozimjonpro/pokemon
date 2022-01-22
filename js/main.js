@@ -8,30 +8,44 @@ var elInputFifth = document.querySelector('.form__input--fifth');
 
 
 
+function addNewPokemon(pokemonImg, pokemonName, pokemonType, pokemonWeight, pokemonHeight, pokemonArr){
+    var inputFirstValue = pokemonImg.value.trim();
+    var inputSecondValue = pokemonName.value.trim();    
+    var inputThirdValue = pokemonType.value.trim();
+    var inputFourthValue = pokemonWeight.value.trim();
+    var inputFifthValue = pokemonHeight.value.trim();
+
+    var newPokemon = ({
+        img: inputFirstValue,
+        name: inputSecondValue,
+        type: inputThirdValue,
+        weight: inputFourthValue,
+        height: inputFifthValue
+    })
+
+    pokemonArr.unshift(newPokemon)
+}
+
+
 function handleFormSubmit(evt){
     evt.preventDefault();
 
+addNewPokemon(elInputFirst,
+    elInputSecond,
+    elInputThird,
+    elInputFourth,
+    elInputFifth,
+    pokemons);
 
-var inputFirstValue = elInputFirst.value.trim();
-var inputSecondValue = elInputSecond.value.trim();    
-var inputThirdValue = elInputThird.value.trim();
-var inputFourthValue = elInputFourth.value.trim();
-var inputFifthValue = elInputFifth.value.trim();
+    renderingPokemon(pokemons)
 
-elInputFirst.value = null;
 elInputSecond.value = null;
 elInputThird.value = null;
 elInputFourth.value = null;
 elInputFifth.value = null;
 
-var newPokemon = ({
-    img: inputFirstValue,
-    name: inputSecondValue,
-    type: inputThirdValue,
-    weight: inputFourthValue,
-    height: inputFifthValue
-})
-pokemons.unshift(newPokemon)
+
+// pokemons.unshift(newPokemon)
 console.log(pokemons)
 }
 
@@ -41,7 +55,7 @@ elForm.addEventListener('submit', handleFormSubmit);
 
 
 function renderingPokemon(_pokemons){
-
+elPokemonList.innerHTML = null;
     for(var i = 0; i < _pokemons.length; i++){
 
         // Creating new elements
@@ -64,7 +78,7 @@ function renderingPokemon(_pokemons){
         newImg.setAttribute('height', 157);
         newHeading.setAttribute('class', 'pokemon__heading fw-bold text-dark');
         newDefaultHeading.setAttribute('class', 'pokemon-default__heading fw-bold text-dark mt-5')
-        newUl.setAttribute('class', 'pokemon__feature');
+        newUl.setAttribute('class', 'pokemon__feature d-flex');
         newSpan.setAttribute('class', 'pokemon__weight mx-4 ms-0 fw-bold');
         newSpanAge.setAttribute('class', 'pokemin__age ms-2 fw-bold')
 
@@ -74,7 +88,8 @@ for(var j = 0; j < _pokemons[i].type.length; j++){
 
 var newTypeList = document.createElement('li');
 newTypeList.setAttribute('class', 'pokemon__type text-dark mb-1')
-newTypeList.textContent =( _pokemons[i].type).join(', ')
+newTypeList.textContent =_pokemons[i].type[j]
+newUl.appendChild(newTypeList)
 
 }
 

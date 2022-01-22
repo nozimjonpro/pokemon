@@ -64,7 +64,7 @@ elPokemonList.innerHTML = null;
         var newImg = document.createElement('img');
         var newHeading = document.createElement('h4');
         var newDefaultHeading = document.createElement('h3')
-        var newUl = document.createElement('ul');
+        var newUl = document.createElement('div');
         var newSpan = document.createElement('span');
         var newSpanAge = document.createElement('span');
 
@@ -76,8 +76,8 @@ elPokemonList.innerHTML = null;
         newImg.setAttribute('class', 'pokemon__image mx-auto d-block mb-3');
         newImg.setAttribute('width', 157);
         newImg.setAttribute('height', 157);
-        newHeading.setAttribute('class', 'pokemon__heading fw-bold text-dark');
-        newDefaultHeading.setAttribute('class', 'pokemon-default__heading fw-bold text-dark mt-5')
+        newHeading.setAttribute('class', 'pokemon__heading fw-bold text-dark mb-1');
+        newDefaultHeading.setAttribute('class', 'pokemon-default__heading fw-bold text-dark mt-5 mb-1')
         newUl.setAttribute('class', 'pokemon__feature d-flex');
         newSpan.setAttribute('class', 'pokemon__weight mx-4 ms-0 fw-bold');
         newSpanAge.setAttribute('class', 'pokemin__age ms-2 fw-bold')
@@ -86,8 +86,8 @@ elPokemonList.innerHTML = null;
 
 for(var j = 0; j < _pokemons[i].type.length; j++){
 
-var newTypeList = document.createElement('li');
-newTypeList.setAttribute('class', 'pokemon__type text-dark mb-1')
+var newTypeList = document.createElement('p');
+newTypeList.setAttribute('class', 'pokemon__type text-dark m-0')
 newTypeList.textContent =_pokemons[i].type[j]
 newUl.appendChild(newTypeList)
 

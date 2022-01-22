@@ -1,0 +1,17 @@
+$bg-color: #FFD845;
+
+$primary: $bg-color;
+$dark: dimgray;
+$success: green;
+
+$spacer: 2rem;
+
+$input-padding-y: 20px;
+
+$input-border-radius: 50px;
+
+$btn-padding-y: 30px;
+
+$border-radius: 50px;
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';

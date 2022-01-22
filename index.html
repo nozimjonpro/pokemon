@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/main.min.css" />
+		<title>Document</title>
+	</head>
+	<body>
+	
+
+		<main class="main">
+			<section class="pokemon">
+				<div class="container mt-5">
+					<a class="pokemon__link d-block mx-auto text-center" href="index.html">
+						<img 
+						class="pokemon__logo mb-4" 
+						src="./img/pokemon_logo.svg" 
+						alt="pokemon logo image"
+						width="610"
+						height="225">
+					</a>
+					<form class="pokemon__form flex-column mt-4 mb-5 p-0 g-0">
+<div class="inputs__top d-flex  justify-content-center flex-wrap">
+	<input class="form__input form__input--first form-control px-2 g-0"  value="http://www.serebii.net/pokemongo/pokemon/001.png"  type="text" required>
+	<input class="form__input form__input--second form-control px-2 g-0 " placeholder="Pokeomon's name..." type="text" required>
+	<input class="form__input form__input--third form-control px-2 g-0 " placeholder="Pokemon's type (posion)..." type="text" required>
+</div>
+<div class="inputs__bottom d-flex justify-content-center flex-wrap">
+<input class="form__input form__input--fourth  d-block form-control px-2 g-0" placeholder="Pokemon's weight..." type="text" required>
+<input class="form__input form__input--fifth  d-block form-control px-2 g-0" placeholder="Pokemon's height..." type="text" required>
+</div>
+<button class="pokemon__button mx-auto">Button</button>
+					</form>
+					<ul class="pokemon__list d-flex justify-content-md-evenly justify-content-lg-between flex-wrap justify-content-sm-center"></ul>
+				</div>
+			</section>
+		</main>
+		<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="js/pokemon.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

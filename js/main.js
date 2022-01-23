@@ -12,8 +12,8 @@ function addNewPokemon(pokemonImg, pokemonName, pokemonType, pokemonWeight, poke
     var inputFirstValue = pokemonImg.value.trim();
     var inputSecondValue = pokemonName.value.trim();    
     var inputThirdValue = pokemonType.value.trim();
-    var inputFourthValue = pokemonWeight.value.trim();
-    var inputFifthValue = pokemonHeight.value.trim();
+    var inputFourthValue = pokemonWeight.value.trim() + ' kg';
+    var inputFifthValue = pokemonHeight.value.trim() + ' m';
 
     var newPokemon = ({
         img: inputFirstValue,
@@ -45,8 +45,6 @@ elInputFourth.value = null;
 elInputFifth.value = null;
 
 
-// pokemons.unshift(newPokemon)
-console.log(pokemons)
 }
 
 elForm.addEventListener('submit', handleFormSubmit);
@@ -96,7 +94,7 @@ newUl.appendChild(newTypeList)
 
 // Assign
 
-newHeading.textContent = _pokemons[i].name;
+newHeading.textContent = _pokemons[i].name ;
 newSpan.textContent = _pokemons[i].weight;
 newDefaultHeading.textContent = 'Pokemons';
 newSpanAge.textContent = _pokemons[i].height;
